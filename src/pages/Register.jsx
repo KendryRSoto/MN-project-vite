@@ -1,8 +1,11 @@
 import { useState } from "react";
+import {} from "../Style/style-form-register.css";
 import { useNavigate } from "react-router-dom";
 import Header from "../Componentes/Header";
 import { v4 as uuidv4 } from "uuid";
 import Swal from "sweetalert2";
+import { Alert } from "../Componentes/Alert";
+import { ToastContainer } from "react-toastify";
 
 export function Register() {
   const [name, setName] = useState("");
@@ -46,24 +49,18 @@ export function Register() {
       if (password.length > 6) {
         localStorage.setItem(`${name} ${uuidv4()}`, JSON.stringify(user));
         Swal.fire({
-          position: 'top-end',
-          icon: 'success',
-          title: 'the user registered successfully',
+          position: "top-end",
+          icon: "success",
+          title: "the user registered successfully",
           showConfirmButton: false,
-          timer: 1800
-        })
+          timer: 1800,
+        });
         navegar("/");
       } else {
-        Swal.fire(
-          "the email or the password entered are not valid please verify"
-        );
+        Alert("the email or the password is incorrect");
       }
     } else {
-      Swal.fire({
-        icon: "error",
-        title: "Oops...",
-        text: "All fields are required",
-      });
+      Alert("All fields are required");
     }
   };
 
@@ -73,24 +70,25 @@ export function Register() {
   return (
     <div className="Register">
       <Header />
-      <div className="box-form">
-        <div className="form">
+      <div className="box-form-register">
+        <div className="form-register">
           <div className="tittle-register">
             <h2>REGISTER</h2>
           </div>
-          <form onChange={handleChange} className="mb-3">
-            <label className="label-name">Name</label>
+          <form onChange={handleChange}>
+            <label className="label-name-register">Name</label>
+
             <input
-              className="input-name"
+              className="input-register"
               type="text"
               placeholder="Entry the Name"
               name="name"
               required
             />
 
-            <label className="label-lastname">Lastname</label>
+            <label className="label-name-register">Lastname</label>
             <input
-              className="input-name"
+              className="input-register"
               type="text"
               placeholder="Entry the Lastname"
               name="lastname"
@@ -99,7 +97,7 @@ export function Register() {
 
             <label className="label-name">Email</label>
             <input
-              className="input-name"
+              className="input-name-register"
               type="email"
               placeholder="Entry the Email"
               name="email"
@@ -108,7 +106,7 @@ export function Register() {
 
             <label className="label-name">Password</label>
             <input
-              className="input-name"
+              className="input-name-register"
               type="password"
               placeholder="Entry the Password"
               name="password"
@@ -116,15 +114,16 @@ export function Register() {
               minLength="6"
             />
 
-            <button className="button-R" onClick={handleRegister}>
+            <button className="button-R-register" onClick={handleRegister}>
               Register
             </button>
-            <button className="button-B" onClick={buttonBack}>
+            <button className="button-B-register" onClick={buttonBack}>
               Back
             </button>
           </form>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 }

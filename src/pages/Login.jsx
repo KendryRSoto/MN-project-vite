@@ -2,12 +2,12 @@ import Header from "../Componentes/Header";
 import "../Style/style-form.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import Swal from "sweetalert2";
+import { Alert } from "../Componentes/Alert";
+import { ToastContainer } from "react-toastify";
 
 export function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [isLogin, setIsLogin] = useState(true);
 
   const handleChangeLogin = ({ target: { name, value } }) => {
     switch (name) {
@@ -31,29 +31,29 @@ export function Login() {
       let key = keys[i];
       let inf = JSON.parse(localStorage.getItem(key));
 
-      if (inf.email === email) {
-        if(inf.password === password){
-          navegar('/home')
+      if(password  && email){
+        if (inf.email === email) {
+          if (inf.password === password) {
+            navegar("/home");
+          }else {
+            Alert('The password is incorrect, please try again!')
+          }
+        } else {
+          Alert('The username is incorrect, please try again!')
+          
         }
-        
-        navegar("/home");
-      } else {
-        Swal.fire({
-          icon: "error",
-          title: "Oops...",
-          text: "the username or password is incorrect, please try again!",
-        });
+      }else {
+        Alert('All fields are required')
       }
     }
   };
 
-  console.log(isLogin);
   return (
     <div className="login">
       <Header />
       <div className="box-form">
         <div className="form">
-          <div className="tittle-register">
+          <div className="tittle-login">
             <h2>Login</h2>
           </div>
           <form className="mb-3" onChange={handleChangeLogin}>
@@ -75,14 +75,18 @@ export function Login() {
               required
               minLength="6"
             />
-            <Link to="/register">To register click here</Link>
+            <Link className="link-register" to="/register">
+              To register click here
+            </Link>
+            <br />
 
-            <button className="button-R" onClick={handleLogin}>
+            <button className="button-L" onClick={handleLogin}>
               Login
             </button>
           </form>
         </div>
       </div>
+      <ToastContainer/>
     </div>
   );
 }

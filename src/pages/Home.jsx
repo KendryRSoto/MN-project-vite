@@ -1,3 +1,6 @@
+import "../Style/style-home.css";
+
+
 export function Home() {
   return (
     <div>
