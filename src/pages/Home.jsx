@@ -1,10 +1,13 @@
-import "../Style/style-home.css";
-
+import { fill } from "@cloudinary/url-gen/actions/resize";
+import { CloudinaryImage } from "@cloudinary/url-gen";
 
 export function Home() {
+  const myImage = new CloudinaryImage("sample", {
+    cloudName: "dstgujjlr",
+  }).resize(fill().width(100).height(150));
   return (
     <div>
-      <h1>hola home</h1>
+      <AdvancedImage cldImg={myImage} />
     </div>
   );
 }

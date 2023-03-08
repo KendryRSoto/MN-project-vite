@@ -31,19 +31,18 @@ export function Login() {
       let key = keys[i];
       let inf = JSON.parse(localStorage.getItem(key));
 
-      if(password  && email){
+      if (password && email) {
         if (inf.email === email) {
           if (inf.password === password) {
             navegar("/home");
-          }else {
-            Alert('The password is incorrect, please try again!')
+          } else {
+            Alert("The password is incorrect, please try again!");
           }
         } else {
-          Alert('The username is incorrect, please try again!')
-          
+          Alert("The username is incorrect, please try again!");
         }
-      }else {
-        Alert('All fields are required')
+      } else {
+        Alert("All fields are required");
       }
     }
   };
@@ -86,7 +85,7 @@ export function Login() {
           </form>
         </div>
       </div>
-      <ToastContainer/>
+      <ToastContainer />
     </div>
   );
 }

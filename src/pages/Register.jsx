@@ -70,58 +70,57 @@ export function Register() {
   return (
     <div className="Register">
       <Header />
-      <div className="box-form-register">
-        <div className="form-register">
-          <div className="tittle-register">
-            <h2>REGISTER</h2>
-          </div>
-          <form onChange={handleChange}>
-            <label className="label-name-register">Name</label>
 
-            <input
-              className="input-register"
-              type="text"
-              placeholder="Entry the Name"
-              name="name"
-              required
-            />
-
-            <label className="label-name-register">Lastname</label>
-            <input
-              className="input-register"
-              type="text"
-              placeholder="Entry the Lastname"
-              name="lastname"
-              required
-            />
-
-            <label className="label-name">Email</label>
-            <input
-              className="input-name-register"
-              type="email"
-              placeholder="Entry the Email"
-              name="email"
-              required
-            />
-
-            <label className="label-name">Password</label>
-            <input
-              className="input-name-register"
-              type="password"
-              placeholder="Entry the Password"
-              name="password"
-              required
-              minLength="6"
-            />
-
-            <button className="button-R-register" onClick={handleRegister}>
-              Register
-            </button>
-            <button className="button-B-register" onClick={buttonBack}>
-              Back
-            </button>
-          </form>
+      <div className="form-register">
+        <div className="tittle-register">
+          <h2>REGISTER</h2>
         </div>
+        <form onChange={handleChange}>
+          <label className="label-name-register">Name</label>
+
+          <input
+            className="input-register"
+            type="text"
+            placeholder="Entry the Name"
+            name="name"
+            required
+          />
+
+          <label className="label-name-register">Lastname</label>
+          <input
+            className="input-register"
+            type="text"
+            placeholder="Entry the Lastname"
+            name="lastname"
+            required
+          />
+
+          <label className="label-name">Email</label>
+          <input
+            className="input-name-register"
+            type="email"
+            placeholder="Entry the Email"
+            name="email"
+            required
+          />
+
+          <label className="label-name">Password</label>
+          <input
+            className="input-name-register"
+            type="password"
+            placeholder="Entry the Password"
+            name="password"
+            required
+            minLength="6"
+          />
+
+          <button className="button-R-register" onClick={handleRegister}>
+            Register
+          </button>
+          <button className="button-B-register" onClick={buttonBack}>
+            Back
+          </button>
+        </form>
       </div>
       <ToastContainer />
     </div>

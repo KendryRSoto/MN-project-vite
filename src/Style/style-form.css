@@ -2,15 +2,14 @@
   padding: 0px;
   margin: 0px;
 }
-
 .login {
   width: 100%;
-  height: 625px;
+  height: 100%;
   background: linear-gradient(to bottom right, #145a32, #0b9799);
 }
 .box-form {
   width: 80%;
-  height: 500px;
+  height: 100%;
   margin: auto;
   margin-top: 50px;
 }
