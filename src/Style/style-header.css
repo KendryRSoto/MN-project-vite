@@ -8,16 +8,15 @@
 }
 .tittle {
   padding: 5px;
-  color: #fff;
+  color: #1294c5;
   font-family: "Times New Roman", Times, serif;
   cursor: pointer;
   text-shadow: 1px 1px 2px #000;
 }
 .tittle:hover {
   padding: 5px;
-  color: #E0F5F5;
+  color: #129;
   font-family: "Times New Roman", Times, serif;
   cursor: pointer;
   text-shadow: 1px 1px 2px #000;
 }
-

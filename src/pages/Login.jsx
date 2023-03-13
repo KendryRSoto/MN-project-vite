@@ -51,40 +51,38 @@ export function Login() {
     <div className="login">
       <Header />
 
-      <div className="box-form">
-        <div className="form">
-          <div className="tittle-login">
-            <h2>Login</h2>
-          </div>
-          <form className="mb-3" onChange={handleChangeLogin}>
-            <label className="label-name">Email</label>
-            <input
-              className="input-name"
-              type="email"
-              placeholder="Entry the Email"
-              name="email"
-              required
-            />
-
-            <label className="label-name">Password</label>
-            <input
-              className="input-name"
-              type="password"
-              placeholder="Entry the Password"
-              name="password"
-              required
-              minLength="6"
-            />
-            <Link className="link-register" to="/register">
-              To register click here
-            </Link>
-            <br />
-
-            <button className="button-L" onClick={handleLogin}>
-              Login
-            </button>
-          </form>
+      <div className="form">
+        <div className="tittle-login">
+          <h2>Login</h2>
         </div>
+        <form className="mb-3" onChange={handleChangeLogin}>
+          <label className="label-name">Email</label>
+          <input
+            className="input-name"
+            type="email"
+            placeholder="Entry the Email"
+            name="email"
+            required
+          />
+
+          <label className="label-name">Password</label>
+          <input
+            className="input-name"
+            type="password"
+            placeholder="Entry the Password"
+            name="password"
+            required
+            minLength="6"
+          />
+          <Link className="link-register" to="/register">
+            To register click here
+          </Link>
+          <br />
+
+          <button className="button-L" onClick={handleLogin}>
+            Login
+          </button>
+        </form>
       </div>
       <ToastContainer />
     </div>

@@ -122,6 +122,7 @@ export function Register() {
           </button>
         </form>
       </div>
+
       <ToastContainer />
     </div>
   );

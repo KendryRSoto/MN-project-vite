@@ -1,6 +1,6 @@
-import '../Style/style-header.css'
+import "../Style/style-header.css";
 
-function Header(text) {
+function Header() {
   return (
     <div className="header">
       <h1 className="tittle">Galery Home</h1>
