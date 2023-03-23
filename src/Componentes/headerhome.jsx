@@ -6,7 +6,7 @@ export function Headerhome() {
     <div className="header-home">
       <h1 className="tittle-home">Galery Home</h1>
       <NavDropdown
-        title="menu"
+        title="Menu"
         id="navbarScrollingDropdown"
         className="button-home"
       >

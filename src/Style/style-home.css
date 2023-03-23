@@ -5,3 +5,95 @@
 .box-master {
   width: 100%;
 }
+.control-Panel {
+  margin-top: 5%;
+  margin-bottom: 10px;
+  width: 50%;
+  height: 60px;
+  padding: 10px;
+  display: flex;
+  display: block;
+  align-items: center;
+  border-radius: 10px;
+}
+.button {
+  width: 150px;
+  height: 50px;
+  margin: 5px;
+  border-radius: 10px;
+  border: 2px solid #006287;
+  color: #006287;
+  background-color: #fff;
+}
+@media screen and (max-width: 621px) {
+  .button {
+    width: 150px;
+    height: 40px;
+    margin: 3px;
+    border-radius: 10px;
+    border: 2px solid #006287;
+    color: #006287;
+    background-color: #fff;
+    font-size: 10px;
+  }
+}
+.icon {
+  width: 30px;
+  height: 30px;
+}
+@media screen and (max-width: 621px) {
+  .icon {
+    display: none;
+  }
+}
+.button:hover {
+  color: #870000;
+  border: 2px solid #870000;
+}
+
+.image-preview {
+  width: 201px;
+  height: 200px;
+  margin: 10px; 
+}
+
+@media screen and (max-width: 375px) {
+  .image-preview {
+    width: 101px;
+    height: 100px;
+    margin: 5px;
+  }
+}
+.img-s {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 375px) {
+  .img-s {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+  }
+}
+
+.icon-opt{
+  opacity: 0;
+}
+
+.icon-opt:hover{
+  opacity: 1;
+}
+.images-preview-container {
+  display: flex;
+  justify-content: left;
+  flex-wrap: wrap;
+ 
+}
+.conteiner-p{
+  width: 100%;
+}
+
+
