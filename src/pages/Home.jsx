@@ -9,21 +9,21 @@ export function Home() {
   const [images, setImages] = useState([]);
   const [toRemove, setToRemove] = useState(null);
 
-
-  const handleDelete = async (imgObje) => {
-    setToRemove(imgObje.public_id);
+  const handleDelete = async (imgObj) => {
+    setToRemove(imgObj.public_id);
     const cloudinaryConfig = {
       cloudName: "dstgujjlr",
       apiKey: "847755325632252",
       apiSecret: "tu3p5IBBOcCyjBbCIlw8uuc5RMI",
     };
-
     const cloudinaryCore = new cloudinary.Cloudinary(cloudinaryConfig);
 
     try {
-      const response = await cloudinaryCore.api.delete_resources(imgObje.public_id);
-      setToRemove(null)
-      return response.deleted[imgObje.public_id] === "deleted";
+      const response = await cloudinaryCore.api.delete_resources(
+        imgObj.public_id
+      );
+      setToRemove(null);
+      return response.deleted[imgObj.public_id] === "deleted";
     } catch (error) {
       console.error("Error al borrar la imagen de Cloudinary:", error);
       return false;
@@ -63,10 +63,10 @@ export function Home() {
       </div>
       <div className="conteiner-p">
         <div className="images-preview-container">
-          {images.map((images) => (
+          {images.map((image) => (
             <div className="image-preview">
-              <BsTrash3 onClick={() => handleDelete(images)} />
-              <img src={images.url} className="img-s" />
+              <BsTrash3 onClick={() => handleDelete(image)} />
+              <img src={image.url} className="img-s" />
             </div>
           ))}
         </div>
