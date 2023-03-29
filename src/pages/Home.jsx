@@ -2,23 +2,32 @@ import { Headerhome } from "../Componentes/headerhome";
 import { AiOutlineCloudUpload } from "react-icons/ai";
 import { BsTrash3 } from "react-icons/bs";
 import { useState } from "react";
-import cloudinary from 'cloudinary-core';
+import cloudinary from "cloudinary-core";
 import "../Style/style-home.css";
 
 export function Home() {
   const [images, setImages] = useState([]);
-  
+  const [toRemove, setToRemove] = useState(null);
 
-  const handleDelete = () => {
-    const cl = new cloudinary.Cloudinary({
-      cloud_name: 'dstgujjlr',
-      api_key: '847755325632252',
-      api_secret: 'tu3p5IBBOcCyjBbCIlw8uuc5RMI'
-    });
 
-    cloudinary.v2.uploader.destroy(public_id, function (error, result) {
-      console.log(result);
-    });
+  const handleDelete = async (imgObje) => {
+    setToRemove(imgObje.public_id);
+    const cloudinaryConfig = {
+      cloudName: "dstgujjlr",
+      apiKey: "847755325632252",
+      apiSecret: "tu3p5IBBOcCyjBbCIlw8uuc5RMI",
+    };
+
+    const cloudinaryCore = new cloudinary.Cloudinary(cloudinaryConfig);
+
+    try {
+      const response = await cloudinaryCore.api.delete_resources(imgObje.public_id);
+      setToRemove(null)
+      return response.deleted[imgObje.public_id] === "deleted";
+    } catch (error) {
+      console.error("Error al borrar la imagen de Cloudinary:", error);
+      return false;
+    }
   };
 
   const handleOpenWidget = (e) => {
@@ -34,7 +43,6 @@ export function Home() {
             { url: result.info.url, public_id: result.info.public_id },
           ]);
         }
-
       }
     );
     myWidget.open();
@@ -57,7 +65,7 @@ export function Home() {
         <div className="images-preview-container">
           {images.map((images) => (
             <div className="image-preview">
-              <BsTrash3 onClick={handleDelete} />
+              <BsTrash3 onClick={() => handleDelete(images)} />
               <img src={images.url} className="img-s" />
             </div>
           ))}
