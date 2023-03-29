@@ -1,13 +1,25 @@
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { Headerhome } from "../Componentes/headerhome";
 import { AiOutlineCloudUpload } from "react-icons/ai";
 import { BsTrash3 } from "react-icons/bs";
-import { useState } from "react";
 import cloudinary from "cloudinary-core";
 import "../Style/style-home.css";
 
 export function Home() {
   const [images, setImages] = useState([]);
   const [toRemove, setToRemove] = useState(null);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const { page } = useParams();
+
+  useEffect(() => {
+    const userData = JSON.parse(localStorage.getItem("userData"));
+    if (userData && userData.email && userData.password && page === "home") {
+      setIsAuthenticated(true);
+    } else {
+      setIsAuthenticated(false);
+    }
+  }, [isAuthenticated, page]);
 
   const handleDelete = async (imgObj) => {
     setToRemove(imgObj.public_id);
