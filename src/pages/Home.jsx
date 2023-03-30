@@ -9,16 +9,17 @@ import "../Style/style-home.css";
 export function Home() {
   const [images, setImages] = useState([]);
   const [toRemove, setToRemove] = useState(null);
+  const [redirect, setRedirect] = useState(false);
   const { page } = useParams();
 
   useEffect(() => {
     const userData = JSON.parse(localStorage.getItem("userData"));
     if (userData && userData.email && userData.password && page === "home") {
-      <Redirect to="/home" />
+      setRedirect(true);
     } else {
-      <Redirect to="/" />
+      setRedirect(false);
     }
-  });
+  }, [page]);
 
   const handleDelete = async (imgObj) => {
     setToRemove(imgObj.public_id);
@@ -59,7 +60,9 @@ export function Home() {
     myWidget.open();
   };
 
-  return (
+  return redirect ? (
+    <Redirect to="/" />
+  ) : (
     <div className="box-master">
       <Headerhome />
       <br />
