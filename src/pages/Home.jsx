@@ -1,48 +1,35 @@
 import { useEffect, useState } from "react";
-import { useParams, Redirect } from "react-router-dom";
 import { Headerhome } from "../Componentes/headerhome";
 import { AiOutlineCloudUpload } from "react-icons/ai";
 import { BsTrash3 } from "react-icons/bs";
-import cloudinary from "cloudinary-core";
+import { handleDelete } from "../util/Credencial";
+import { useNavigate } from "react-router-dom";
 import "../Style/style-home.css";
 
 export function Home() {
   const [images, setImages] = useState([]);
-  const [toRemove, setToRemove] = useState(null);
-  const [redirect, setRedirect] = useState(false);
-  const { page } = useParams();
+  const navegar = useNavigate();
 
   useEffect(() => {
-    const userData = JSON.parse(localStorage.getItem("userData"));
-    if (userData && userData.email && userData.password && page === "home") {
-      setRedirect(true);
+    const datosLocalStorage = localStorage.getItem("user");
+  
+    if (datosLocalStorage !== null) {
+      navegar("/home");
     } else {
-      setRedirect(false);
+      navegar("/");
     }
-  }, [page]);
-
-  const handleDelete = async (imgObj) => {
-    setToRemove(imgObj.public_id);
-    const cloudinaryConfig = {
-      cloudName: "dstgujjlr",
-      apiKey: "847755325632252",
-      apiSecret: "tu3p5IBBOcCyjBbCIlw8uuc5RMI",
-    };
-    const cloudinaryCore = new cloudinary.Cloudinary(cloudinaryConfig);
-
-    try {
-      const response = await cloudinaryCore.api.delete_resources(
-        imgObj.public_id
-      );
-      setToRemove(null);
-      return response.deleted[imgObj.public_id] === "deleted";
-    } catch (error) {
-      console.error("Error al borrar la imagen de Cloudinary:", error);
-      return false;
+  }, []);
+  
+  useEffect(() => {
+    const datosLocalStorage = localStorage.getItem("user");
+  
+    if (datosLocalStorage === null) {
+      navegar("/");
     }
-  };
+  }, [images]);
 
   const handleOpenWidget = (e) => {
+   
     let myWidget = window.cloudinary.createUploadWidget(
       {
         cloudName: "dstgujjlr",
@@ -54,15 +41,30 @@ export function Home() {
             ...prev,
             { url: result.info.url, public_id: result.info.public_id },
           ]);
+
+          const datosLocalStorage =
+            JSON.parse(localStorage.getItem("user")) || {};
+
+          if (!datosLocalStorage.user) {
+            datosLocalStorage.user = {};
+          }
+
+          datosLocalStorage.user.url = result.info.url;
+          datosLocalStorage.user.public_id = result.info.public_id;
+
+          localStorage.setItem("user", JSON.stringify(datosLocalStorage));
         }
       }
     );
     myWidget.open();
   };
 
-  return redirect ? (
-    <Redirect to="/" />
-  ) : (
+
+  const handleDeleteImage = (public_id) => {
+    handleDelete(public_id);
+    setImages(prevImages => prevImages.filter(image => image.public_id !== public_id));
+  };
+  return (
     <div className="box-master">
       <Headerhome />
       <br />
@@ -79,7 +81,7 @@ export function Home() {
         <div className="images-preview-container">
           {images.map((image) => (
             <div className="image-preview">
-              <BsTrash3 onClick={() => handleDelete(image)} />
+              <BsTrash3 onClick={() => handleDeleteImage (image.public_id)} />
               <img src={image.url} className="img-s" />
             </div>
           ))}

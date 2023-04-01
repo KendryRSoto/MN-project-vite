@@ -1,8 +1,7 @@
 import { useState } from "react";
-import {} from "../Style/style-form-register.css";
+import "../Style/style-form-register.css";
 import { useNavigate } from "react-router-dom";
 import Header from "../Componentes/Header";
-import { v4 as uuidv4 } from "uuid";
 import Swal from "sweetalert2";
 import { Alert } from "../Componentes/Alert";
 import { ToastContainer } from "react-toastify";
@@ -47,11 +46,11 @@ export function Register() {
 
     if (name.length && lastName.length > 0 && vali === true) {
       if (password.length > 6) {
-        localStorage.setItem(`${name} ${uuidv4()}`, JSON.stringify(user));
+        localStorage.setItem(`user`, JSON.stringify(user));
         Swal.fire({
           position: "top-end",
           icon: "success",
-          title: "the user registered successfully",
+          title: "The User Registered Successfully",
           showConfirmButton: false,
           timer: 1800,
         });

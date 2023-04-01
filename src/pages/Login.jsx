@@ -27,23 +27,25 @@ export function Login() {
   const handleLogin = (e) => {
     e.preventDefault();
     let keys = Object.keys(localStorage);
+    let userFound = false;
     for (let i = 0; i < keys.length; i++) {
       let key = keys[i];
       let inf = JSON.parse(localStorage.getItem(key));
-
-      if (password && email) {
-        if (inf.email === email) {
-          if (inf.password === password) {
-            navegar("/home");
-          } else {
-            Alert("The password is incorrect, please try again!");
-          }
+      if (inf.email === email) {
+        userFound = true;
+        if (inf.password === password) {
+          navegar("/home");
+          break;
         } else {
-          Alert("The username is incorrect, please try again!");
+          Alert("The password is incorrect, please try again!");
+          break;
         }
-      } else {
-        Alert("All fields are required");
       }
+    }
+    if (!userFound) {
+      Alert("No registered user");
+    } else if (!email || !password) {
+      Alert("All fields are required");
     }
   };
 
