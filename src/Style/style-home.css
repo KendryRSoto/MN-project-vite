@@ -55,7 +55,7 @@
 .image-preview {
   width: 201px;
   height: 200px;
-  margin: 10px; 
+  margin: 10px;
 }
 
 @media screen and (max-width: 375px) {
@@ -70,31 +70,40 @@
   height: 200px;
   object-fit: cover;
   cursor: pointer;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
 }
 
 @media screen and (max-width: 375px) {
   .img-s {
     width: 100px;
     height: 100px;
+    margin: 10px;
     object-fit: cover;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    
   }
 }
 
-.icon-opt{
-  opacity: 0;
+
+
+.delete-icon:hover {
+  color: #870000;
+  
 }
 
-.icon-opt:hover{
-  opacity: 1;
+.img-s:hover {
+  transform: scale(1.1);
+ 
 }
+
+
 .images-preview-container {
   display: flex;
   justify-content: left;
   flex-wrap: wrap;
- 
 }
-.conteiner-p{
+.conteiner-p {
   width: 100%;
 }
-
-

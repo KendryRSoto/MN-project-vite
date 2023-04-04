@@ -20,13 +20,6 @@ export function Home() {
     }
   }, []);
   
-  useEffect(() => {
-    const datosLocalStorage = localStorage.getItem("user");
-  
-    if (datosLocalStorage === null) {
-      navegar("/");
-    }
-  }, [images]);
 
   const handleOpenWidget = (e) => {
    
@@ -81,7 +74,7 @@ export function Home() {
         <div className="images-preview-container">
           {images.map((image) => (
             <div className="image-preview">
-              <BsTrash3 onClick={() => handleDeleteImage (image.public_id)} />
+              <BsTrash3 className="delete-icon" onClick={() => handleDeleteImage (image.public_id)} />
               <img src={image.url} className="img-s" />
             </div>
           ))}
