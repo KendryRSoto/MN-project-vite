@@ -1,8 +1,8 @@
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 
-const handleLogUp = () => {
-  let navegar = useNavigate();
+const handleLogUp = (navegar) => {
+  
 
   Swal.fire({
     title: "Are you sure?",

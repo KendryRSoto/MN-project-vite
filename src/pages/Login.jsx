@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { Alert } from "../Componentes/Alert";
 import { ToastContainer } from "react-toastify";
+import { handleLogin } from "../util/handleLogin";
 
 export function Login() {
   const [email, setEmail] = useState("");
@@ -24,29 +25,9 @@ export function Login() {
 
   const navegar = useNavigate();
 
-  const handleLogin = (e) => {
+  const handleLoginClick = (e) => {
     e.preventDefault();
-    let keys = Object.keys(localStorage);
-    let userFound = false;
-    for (let i = 0; i < keys.length; i++) {
-      let key = keys[i];
-      let inf = JSON.parse(localStorage.getItem(key));
-      if (inf.email === email) {
-        userFound = true;
-        if (inf.password === password) {
-          navegar("/home");
-          break;
-        } else {
-          Alert("The password is incorrect, please try again!");
-          break;
-        }
-      }
-    }
-    if (!userFound) {
-      Alert("No registered user");
-    } else if (!email || !password) {
-      Alert("All fields are required");
-    }
+    handleLogin(email, password, navegar, Alert);
   };
 
   return (
@@ -81,7 +62,7 @@ export function Login() {
           </Link>
           <br />
 
-          <button className="button-L" onClick={handleLogin}>
+          <button className="button-L" onClick={handleLoginClick}>
             Login
           </button>
         </form>

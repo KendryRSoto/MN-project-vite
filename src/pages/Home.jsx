@@ -72,8 +72,8 @@ export function Home() {
       </div>
       <div className="conteiner-p">
         <div className="images-preview-container">
-          {images.map((image) => (
-            <div className="image-preview">
+          {images.map((image,index) => (
+            <div key={index} className="image-preview">
               <BsTrash3 className="delete-icon" onClick={() => handleDeleteImage (image.public_id)} />
               <img src={image.url} className="img-s" />
             </div>

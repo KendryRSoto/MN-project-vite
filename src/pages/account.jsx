@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Headerhome } from "../Componentes/headerhome";
 import Swal from "sweetalert2";
-import '../Style/style-account.css'
+import "../Style/style-account.css";
 import withReactContent from "sweetalert2-react-content";
 
 export function Account() {
@@ -9,6 +9,7 @@ export function Account() {
   const [segLastName, setSegLastName] = useState("");
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
+  
 
   useEffect(() => {
     const datosLocalStorage = JSON.parse(localStorage.getItem("user"));
@@ -32,7 +33,6 @@ export function Account() {
       <Headerhome />
 
       <div className="boxsecund">
-        
         <div
           className="namebox"
           onClick={() => {
@@ -128,6 +128,13 @@ export function Account() {
                 } else {
                   setPass(newPassword);
                   handleChange("password", newPassword);
+                  Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Change Made Successfully",
+                    showConfirmButton: false,
+                    timer: 1000,
+                  });
                 }
               },
             });
