@@ -29,7 +29,9 @@ export function Headerhome() {
           Account
         </NavDropdown.Item>
         <NavDropdown.Divider />
-        <NavDropdown.Item onClick={() => handleLogUp(navegar)}>LOG UP</NavDropdown.Item>
+        <NavDropdown.Item onClick={() => handleLogUp(navegar)}>
+          LOG UP
+        </NavDropdown.Item>
       </NavDropdown>
     </div>
   );

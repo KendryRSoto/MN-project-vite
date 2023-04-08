@@ -6,7 +6,7 @@ export const useAuth = () => {
 
   useEffect(() => {
     const datosLocalStorage = localStorage.getItem("user");
-  
+
     if (datosLocalStorage !== null) {
       navegar("/home");
     } else {

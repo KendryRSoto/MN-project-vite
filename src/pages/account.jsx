@@ -72,7 +72,7 @@ export function Account() {
                 }
               },
               preConfirm: (segLastName) => {
-                setName(segLastName);
+                setSegLastName(segLastName);
                 handleChange("Last Name", segLastName);
               },
             });

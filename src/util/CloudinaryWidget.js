@@ -1,6 +1,4 @@
-import { updateLocalStorage } from "../util/Credencial";
-
-export const cloudinaryWidget = (setImages, updateLocalStorage) => {
+export function openCloudinaryWidget(setImages) {
   let myWidget = window.cloudinary.createUploadWidget(
     {
       cloudName: "dstgujjlr",
@@ -17,15 +15,15 @@ export const cloudinaryWidget = (setImages, updateLocalStorage) => {
           JSON.parse(localStorage.getItem("user")) || {};
 
         if (!datosLocalStorage.user) {
-          datosLocalStorage.user = {};
+          datosLocalStorage.user = [];
         }
 
         datosLocalStorage.user.url = result.info.url;
         datosLocalStorage.user.public_id = result.info.public_id;
 
-        updateLocalStorage(datosLocalStorage);
+        localStorage.setItem("user", JSON.stringify(datosLocalStorage));
       }
     }
   );
   myWidget.open();
-};
+}
