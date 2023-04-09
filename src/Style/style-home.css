@@ -5,6 +5,7 @@
 
 .box-master {
   width: 100%;
+  background: linear-gradient(to bottom, #0099D3, #ffff);
 }
 .control-Panel {
   margin-top: 5%;

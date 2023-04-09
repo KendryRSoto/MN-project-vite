@@ -10,11 +10,15 @@
     z-index: 100%;
   }
   .tittle-home {
+    color: #fff;
     font-family: serif;
     font-size: xx-large;
     display: inline;
     margin: 10px 0px 10px 25px;
     cursor: pointer;
+  }
+  .tittle-home:hover{
+    text-shadow: 2px 2px 2px #870000;
   }
   .button-home {
     width: 100px;
