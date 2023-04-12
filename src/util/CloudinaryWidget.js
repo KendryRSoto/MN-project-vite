@@ -6,21 +6,19 @@ export function openCloudinaryWidget(setImages) {
     },
     (error, result) => {
       if (!error && result && result.event === "success") {
-        setImages((prev) => [
-          ...prev,
-          { url: result.info.url, public_id: result.info.public_id },
-        ]);
+        const newImage = { url: result.info.url, public_id: result.info.public_id };
+        setImages((prev) => [...prev, newImage]);
 
         const datosLocalStorage =
           JSON.parse(localStorage.getItem("user")) || {};
 
-        if (!datosLocalStorage.user) {
-          datosLocalStorage.user = [];
-        }
+        const user = datosLocalStorage.user || {};
+        const images = user.images || [];
 
-        datosLocalStorage.user.url = result.info.url;
-        datosLocalStorage.user.public_id = result.info.public_id;
+        images.push(newImage);
+        user.images = images;
 
+        datosLocalStorage.user = user;
         localStorage.setItem("user", JSON.stringify(datosLocalStorage));
       }
     }
