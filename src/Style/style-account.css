@@ -1,46 +1,45 @@
 .account {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: linear-gradient(to bottom, #0099D3, #ffff);
-  }
-  
-  .boxsecund {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 50px;
-    border: 1px solid #ccc;
-    padding: 20px;
-    width: 400px;
-    box-shadow: 0px 0px 10px #ccc;
-    background-color: rgb(255, 255, 255);
-    
-  }
-  
-  .namebox,
-  .seglastnamebox,
-  .emailbox,
-  .passbox {
-    margin-bottom: 10px;
-    font-family: serif;
-    font-size: 20px;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
-  }
-  
-  .namebox:hover,
-  .seglastnamebox:hover,
-  .emailbox:hover,
-  .passbox:hover {
-    transform: scale(1.1);
-  }
-  
-  .passbox {
-    display: flex;
-    align-items: center;
-  }
-  
-  .passbox span {
-    margin-right: 10px;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(to bottom, #08cfa4, #ffff);
+}
+
+.boxsecund {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  border: 1px solid #ccc;
+  padding: 20px;
+  width: 400px;
+  box-shadow: 0px 0px 10px #ccc;
+  background-color: rgb(255, 255, 255);
+}
+
+.namebox,
+.seglastnamebox,
+.emailbox,
+.passbox {
+  margin-bottom: 10px;
+  font-family: serif;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.namebox:hover,
+.seglastnamebox:hover,
+.emailbox:hover,
+.passbox:hover {
+  transform: scale(1.1);
+}
+
+.passbox {
+  display: flex;
+  align-items: center;
+}
+
+.passbox span {
+  margin-right: 10px;
+}

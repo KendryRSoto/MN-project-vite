@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Headerhome } from "../Componentes/headerhome";
 import { AiOutlineCloudUpload } from "react-icons/ai";
 import { BsTrash3 } from "react-icons/bs";

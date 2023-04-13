@@ -30,6 +30,13 @@ export function Headerhome() {
         </NavDropdown.Item>
         <NavDropdown.Divider />
         <NavDropdown.Item onClick={() => handleLogUp(navegar)}>
+          Delete account
+        </NavDropdown.Item>
+        <NavDropdown.Item
+          onClick={() => {
+            navegar("/");
+          }}
+        >
           LOG UP
         </NavDropdown.Item>
       </NavDropdown>

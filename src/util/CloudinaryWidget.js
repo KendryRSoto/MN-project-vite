@@ -6,7 +6,10 @@ export function openCloudinaryWidget(setImages) {
     },
     (error, result) => {
       if (!error && result && result.event === "success") {
-        const newImage = { url: result.info.url, public_id: result.info.public_id };
+        const newImage = {
+          url: result.info.url,
+          public_id: result.info.public_id,
+        };
         setImages((prev) => [...prev, newImage]);
 
         const datosLocalStorage =
