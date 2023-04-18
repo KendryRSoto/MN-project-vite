@@ -63,9 +63,6 @@ export function Register() {
     }
   };
 
-  const buttonBack = (e) => {
-    navegar("/");
-  };
   return (
     <div className="Register">
       <Header />
@@ -116,7 +113,12 @@ export function Register() {
           <button className="button-R-register" onClick={handleRegister}>
             Register
           </button>
-          <button className="button-B-register" onClick={buttonBack}>
+          <button
+            className="button-B-register"
+            onClick={() => {
+              navegar("/");
+            }}
+          >
             Back
           </button>
         </form>

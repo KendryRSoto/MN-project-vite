@@ -6,5 +6,4 @@ function App() {
     <Rutas/>
   );
 }
-
 export default App;

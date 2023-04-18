@@ -1,6 +1,6 @@
 import "../Style/style-headerhome.css";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import { handleLogUp } from "../util/LogUp";
+import { handleLogUp } from "../util/deleteUser";
 import { useNavigate } from "react-router-dom";
 import { BiUserCircle } from "react-icons/bi";
 

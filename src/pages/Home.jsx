@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Headerhome } from "../Componentes/headerhome";
 import { AiOutlineCloudUpload } from "react-icons/ai";
 import { BsTrash3 } from "react-icons/bs";
@@ -7,11 +7,13 @@ import "../Style/style-home.css";
 import { useAuth } from "../util/useAuth";
 import { openCloudinaryWidget } from "../util/cloudinaryWidget";
 import { ToastContainer } from "react-toastify";
+import { getImagesFromLocalStorage } from "../util/imageReload";
 
 export function Home() {
   const [images, setImages] = useState([]);
 
   useAuth();
+  getImagesFromLocalStorage(setImages);
 
   const handleDeleteImage = (public_id) => {
     deleteImage(public_id);

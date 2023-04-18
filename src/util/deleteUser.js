@@ -1,9 +1,6 @@
 import Swal from "sweetalert2";
-import { useNavigate } from "react-router-dom";
-
+// obtener el usuario y borrar los datos
 const handleLogUp = (navegar) => {
-  
-
   Swal.fire({
     title: "Are you sure?",
     text: "You won't be able to revert this!",

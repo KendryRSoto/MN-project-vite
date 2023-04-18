@@ -30,8 +30,18 @@ function deleteImage(imgObj) {
     requestOptions
   )
     .then((response) => response.json())
-    .then((data) => Success("The image was deleted successfully"))
-    .catch((error) => Alert(`there is an error ${error}`)
-    );
+    .then((data) => {
+      Success("The image was deleted successfully");
+      // Eliminar imagen del localStorage
+      const datosLocalStorage = JSON.parse(localStorage.getItem("user")) || {};
+      const user = datosLocalStorage.user || {};
+      const images = user.images || [];
+      const newImages = images.filter((image) => image.public_id !== imgObj);
+      user.images = newImages;
+      datosLocalStorage.user = user;
+      localStorage.setItem("user", JSON.stringify(datosLocalStorage));
+    })
+    .catch((error) => Alert(`there is an error ${error}`));
 }
+
 export { deleteImage };

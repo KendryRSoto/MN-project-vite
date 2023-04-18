@@ -1,50 +1,53 @@
 * {
-    padding: 0px;
-    margin: 0px;
-  }
-  .header-home {
-    width: 100%;
-    height: 50px;
-    color: #006287;
-    position: fixed absolute;
-    z-index: 100%;
-  }
-  .tittle-home {
-    color: #fff;
-    font-family: serif;
-    font-size: xx-large;
-    display: inline;
-    margin: 10px 0px 10px 25px;
-    cursor: pointer;
-  }
-  .tittle-home:hover{
-    text-shadow: 2px 2px 2px #870000;
-  }
-  .button-home {
-    width: 100px;
-    height: 35px;
-    display: flex;
-    float: right;
-    margin: 10px 20px 10px;
-    justify-content: center;
-    border: 1px solid #006287;
-    color: #006287;
-    border-radius: 10px;
-    background-color: #fff;
-  }
-  .button-home:hover {
-    width: 100px;
-    height: 35px;
-    display: flex;
-    float: right;
-    margin: 10px 20px 10px;
-    justify-content: center;
-    border: 1px solid #870000;
-    color: #870000;
-    border-radius: 10px;
-    background-color: #fff;
-  }
-  .icon-user{
-    width: 50px;
-    height: 30px;
-  }
+  padding: 0px;
+  margin: 0px;
+}
+.header-home {
+  width: 100%;
+  height: 50px;
+  color: #006287;
+  position: fixed absolute;
+  z-index: 100%;
+}
+.tittle-home {
+  color: #fff;
+  font-family: serif;
+  font-size: xx-large;
+  display: inline;
+  margin: 10px 0px 10px 25px;
+}
+
+.tittle-home:hover {
+  color: #a2e5e0;
+  cursor: pointer;
+  text-shadow: -1px -1px 0 #006287, 1px -1px 0 #000, -1px 1px 0 #006287,
+    1px 1px 0 #006287;
+}
+.button-home {
+  width: 100px;
+  height: 35px;
+  display: flex;
+  float: right;
+  margin: 10px 20px 10px;
+  justify-content: center;
+  border: 1px solid #006287;
+  color: #006287;
+  border-radius: 10px;
+  background-color: #fff;
+}
+.button-home:hover {
+  width: 100px;
+  height: 35px;
+  display: flex;
+  float: right;
+  margin: 10px 20px 10px;
+  justify-content: center;
+  border: 1px solid #870000;
+  color: #870000;
+  border-radius: 10px;
+  background-color: #fff;
+}
+.icon-user {
+  width: 50px;
+  height: 30px;
+}

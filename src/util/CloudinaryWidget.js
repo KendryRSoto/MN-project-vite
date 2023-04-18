@@ -23,6 +23,11 @@ export function openCloudinaryWidget(setImages) {
 
         datosLocalStorage.user = user;
         localStorage.setItem("user", JSON.stringify(datosLocalStorage));
+
+        const imageLocalStorage =
+          JSON.parse(localStorage.getItem("images")) || {};
+        imageLocalStorage[newImage.public_id] = newImage.url;
+        localStorage.setItem("images", JSON.stringify(imageLocalStorage));
       }
     }
   );
