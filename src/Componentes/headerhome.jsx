@@ -37,7 +37,7 @@ export function Headerhome() {
             navegar("/");
           }}
         >
-          LOG UP
+          Exit
         </NavDropdown.Item>
       </NavDropdown>
     </div>

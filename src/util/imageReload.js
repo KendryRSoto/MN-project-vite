@@ -7,5 +7,5 @@ export function getImagesFromLocalStorage(setImages) {
     const images = user.images || [];
 
     setImages(images);
-  });
+  },[setImages]);
 }
