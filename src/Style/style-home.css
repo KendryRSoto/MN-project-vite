@@ -114,22 +114,22 @@
   height: 100%;
   object-fit: cover;
 }
-.swal2-popup {
+.pop-sweetalert2 {
   width: 100vw;
   height: 100vh;
   background-color: transparent !important;
+  flex-wrap: wrap;
 }
-
-.swal2-modal {
-  display: flex;
-  align-items: center;
-}
-
-.swal2-image-column {
+.image-sweetalert2{
   flex: 0 0 40%;
   margin-right: 30px;
 }
-
-.swal2-description-column {
-  flex: 1 1 60%;
+.title-sweetalert2{
+  color: #fff;
+  font-size: medium;
+  font-family: serif;
+  
 }
+
+
+

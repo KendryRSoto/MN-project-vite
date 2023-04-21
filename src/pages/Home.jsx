@@ -10,6 +10,9 @@ import { ToastContainer } from "react-toastify";
 import { getImagesFromLocalStorage } from "../util/imageReload";
 import { handleShowImageDetails } from "../util/showImage";
 
+
+
+
 export function Home() {
   const [images, setImages] = useState([]);
 
@@ -23,22 +26,7 @@ export function Home() {
     );
   };
 
-  const handleEditImageDetails = (public_id) => {
-    const imageIndex = images.findIndex((image) => image.public_id === public_id);
-    const image = images[imageIndex];
-    const newTitle = prompt("Enter new title:", image.title);
-    const newDescription = prompt("Enter new description:", image.description);
-  
-    const updatedImage = {
-      ...image,
-      title: newTitle,
-      description: newDescription,
-    };
-  
-    const updatedImages = [...images];
-    updatedImages.splice(imageIndex, 1, updatedImage);
-    setImages(updatedImages);
-  };
+
 
 
   return (
@@ -58,7 +46,7 @@ export function Home() {
         <div className="images-preview-container">
           {images.map((image, index) => (
             <div key={index} className="image-preview">
-              <BsPencil className="edit-icon" onClick={() => handleEditImageDetails(image.public_id)}/>
+              <BsPencil className="edit-icon" />
               <BsTrash3
                 className="delete-icon"
                 onClick={() => handleDeleteImage(image.public_id)}

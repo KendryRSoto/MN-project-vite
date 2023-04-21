@@ -24,7 +24,7 @@ function deleteImage(imgObj) {
       signature: signature,
     }),
   };
-
+//borrar las imagenes de Cloudinary
   fetch(
     `https://api.cloudinary.com/v1_1/${cloudName}/image/destroy`,
     requestOptions
