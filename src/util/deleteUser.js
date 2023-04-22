@@ -9,11 +9,6 @@ const handleLogUp = (navegar) => {
     confirmButtonColor: "#3085d6",
     cancelButtonColor: "#d33",
     confirmButtonText: "Yes, delete it!",
-    backdrop: true,
-    background:'#fff',
-    width: '200xp',
-
-    
   }).then((result) => {
     if (result.isConfirmed) {
       localStorage.removeItem("user");

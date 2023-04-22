@@ -9,9 +9,7 @@ import { openCloudinaryWidget } from "../util/cloudinaryWidget";
 import { ToastContainer } from "react-toastify";
 import { getImagesFromLocalStorage } from "../util/imageReload";
 import { handleShowImageDetails } from "../util/showImage";
-
-
-
+import { showImageDetailsForm } from "../util/showImageDetailsForm";
 
 export function Home() {
   const [images, setImages] = useState([]);
@@ -25,9 +23,6 @@ export function Home() {
       prevImages.filter((image) => image.public_id !== public_id)
     );
   };
-
-
-
 
   return (
     <div className="box-master">
@@ -46,7 +41,10 @@ export function Home() {
         <div className="images-preview-container">
           {images.map((image, index) => (
             <div key={index} className="image-preview">
-              <BsPencil className="edit-icon" />
+              <BsPencil
+                className="edit-icon"
+                onClick={() => showImageDetailsForm(image)}
+              />
               <BsTrash3
                 className="delete-icon"
                 onClick={() => handleDeleteImage(image.public_id)}
@@ -55,7 +53,6 @@ export function Home() {
                 src={image.url}
                 className="img-s"
                 onClick={() => handleShowImageDetails(image)}
-                
               />
             </div>
           ))}
