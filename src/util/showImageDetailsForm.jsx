@@ -2,7 +2,7 @@ import Swal from "sweetalert2";
 
 export function showImageDetailsForm(image) {
   Swal.fire({
-    title: "Agregar detalles",
+    title: "Add title and description",
     html: `
         <label for="title">Title:</label>
         <input type="text" id="title" name="title">
