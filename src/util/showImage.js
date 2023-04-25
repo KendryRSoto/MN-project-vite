@@ -1,9 +1,8 @@
 import Swal from "sweetalert2";
 
-
 export const handleShowImageDetails = (image) => {
   const title = image.title ? image.title : `Title: ${image.public_id}`;
-  const description = image.description ? image.description : 'add description';
+  const description = image.description ? image.description : "add description";
 
   Swal.fire({
     html:
@@ -11,7 +10,7 @@ export const handleShowImageDetails = (image) => {
       '<img class="image-sweetalert2" src="' +
       image.url +
       '" alt="' +
-      title + 
+      title +
       '" />' +
       '<div class="content-sweetalert2">' +
       '<div class="title-sweetalert2">' +
@@ -31,7 +30,6 @@ export const handleShowImageDetails = (image) => {
       content: "content-sweetalert2",
       "text-sweetalert2": "text-sweetalert2",
     },
-    width: "80%", 
+    width: "80%",
   });
 };
-

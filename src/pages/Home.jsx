@@ -54,6 +54,7 @@ export function Home() {
                 className="img-s"
                 onClick={() => handleShowImageDetails(image)}
               />
+              {}
             </div>
           ))}
         </div>

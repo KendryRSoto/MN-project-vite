@@ -184,27 +184,27 @@
   .cc-sweetalert2 {
     flex-direction: column;
   }
-  
+
   .pop-sweetalert2 {
     margin-bottom: 20px;
   }
-  
+
   .image-sweetalert2 {
     width: 100% !important;
     height: auto !important;
     margin-right: 0 !important;
     margin-bottom: 20px !important;
   }
-  
+
   .content-sweetalert2 {
     min-height: auto !important;
   }
-  
+
   .title-sweetalert2 {
     font-size: 30px !important;
     margin-bottom: 10px !important;
   }
-  
+
   .text-sweetalert2 {
     font-size: 20px !important;
   }

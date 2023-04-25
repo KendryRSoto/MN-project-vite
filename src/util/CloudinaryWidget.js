@@ -23,8 +23,6 @@ export function openCloudinaryWidget(setImages) {
 
         datosLocalStorage.user = user;
         localStorage.setItem("user", JSON.stringify(datosLocalStorage));
-
-        
       }
     }
   );
