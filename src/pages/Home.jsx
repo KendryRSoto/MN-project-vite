@@ -5,7 +5,7 @@ import { BsTrash3, BsPencil } from "react-icons/bs";
 import { deleteImage } from "../util/deleteImg";
 import "../Style/style-home.css";
 import { useAuth } from "../util/useAuth";
-import { openCloudinaryWidget } from "../util/cloudinaryWidget.js";
+import { openCloudinaryWidget } from "../util/cloudinaryWidgetss.js";
 import { ToastContainer } from "react-toastify";
 import { getImagesFromLocalStorage } from "../util/imageReload";
 import { handleShowImageDetails } from "../util/showImage";
