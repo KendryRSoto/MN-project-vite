@@ -13,12 +13,14 @@ export function showImageDetailsForm(image) {
       `,
     focusConfirm: false,
     preConfirm: () => {
+      // Cuando se hace clic en "OK", obtiene el título y la descripción ingresados
       const title = Swal.getPopup().querySelector("#title").value;
       const description = Swal.getPopup().querySelector("#description").value;
       return { title, description };
     },
   }).then((result) => {
     if (result.isConfirmed) {
+      // Actualiza los datos de la imagen en el almacenamiento local
       const datosLocalStorage = JSON.parse(localStorage.getItem("user")) || {};
       const user = datosLocalStorage.user || {};
       const images = user.images || [];
@@ -34,6 +36,7 @@ export function showImageDetailsForm(image) {
       user.images = updatedImages;
       datosLocalStorage.user = user;
       localStorage.setItem("user", JSON.stringify(datosLocalStorage));
+      location.reload();
     }
   });
 }

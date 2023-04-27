@@ -3,7 +3,6 @@ import Swal from "sweetalert2";
 export const handleShowImageDetails = (image) => {
   const title = image.title ? image.title : `Title: ${image.public_id}`;
   const description = image.description ? image.description : "add description";
-
   Swal.fire({
     html:
       '<div class="cc-sweetalert2">' +
