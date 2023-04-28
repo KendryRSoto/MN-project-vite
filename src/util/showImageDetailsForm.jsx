@@ -5,7 +5,7 @@ export function showImageDetailsForm(image) {
   const description = image.description ? image.description : "add description";
 
   Swal.fire({
-    title: `Edit Image Details`,
+    title: `Edit Image`,
     html: `
         <div>
           <h4>Title:</h4>

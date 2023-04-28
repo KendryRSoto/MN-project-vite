@@ -6,7 +6,6 @@
 .Register {
   width: 100%;
   height: 600px;
-  background: linear-gradient(to bottom, #0099D3, #ffff);
 }
 
 .form-register {
@@ -133,8 +132,8 @@
   border-radius: 5px;
 }
 .button-B-register:hover {
-  color: #e60032;
-  border: 2px solid #e60032;
+  color: #e6003298;
+  border: 2px solid #e6003288;
 }
 @media screen and (max-width: 584px) {
   .button-B-register {

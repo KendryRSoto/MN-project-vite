@@ -12,7 +12,6 @@ import { handleShowImageDetails } from "../util/showImage";
 import { showImageDetailsForm } from "../util/showImageDetailsForm";
 import Swal from "sweetalert2";
 
-
 export function Home() {
   const [images, setImages] = useState([]);
 
@@ -21,29 +20,21 @@ export function Home() {
 
   const handleDeleteImage = (public_id) => {
     Swal.fire({
-      title: 'Are you sure?',
+      title: "Are you sure?",
       text: "You won't be able to revert this!",
-      icon: 'warning',
+      icon: "warning",
       showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Yes, delete it!'
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        
         deleteImage(public_id);
         setImages((prevImages) =>
-        prevImages.filter((image) => image.public_id !== public_id)
-      );
-        Swal.fire(
-          'Deleted!',
-          'Your file has been deleted.',
-          'success'
-        )
+          prevImages.filter((image) => image.public_id !== public_id)
+        );
       }
-    })
-    
-   
+    });
   };
 
   return (
@@ -76,7 +67,6 @@ export function Home() {
                 className="img-s"
                 onClick={() => handleShowImageDetails(image)}
               />
-           
             </div>
           ))}
         </div>
