@@ -21,11 +21,13 @@ export const handleShowImageDetails = (image) => {
       "</div>" +
       "</div>",
     showConfirmButton: false,
+    showCloseButton: true, 
     customClass: {
       container: "cc-sweetalert2",
       popup: "pop-sweetalert2",
       image: "image-sweetalert2",
       title: "title-sweetalert2",
+      cancelButton: 'cancel-button-sweetalert2',
       content: "content-sweetalert2",
       "text-sweetalert2": "text-sweetalert2",
     },

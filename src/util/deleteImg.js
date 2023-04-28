@@ -9,7 +9,6 @@ const apiSecret = "tu3p5IBBOcCyjBbCIlw8uuc5RMI";
 function deleteImage(imgObj) {
   // Timestamp para la firma
   const timestamp = Math.floor(Date.now() / 1000);
-  // Concatenación de los parámetros para la firma
   const signatureParams = `public_id=${imgObj}&timestamp=${timestamp}${apiSecret}`;
   // Generación de la firma SHA1
   const signature = SHA1(signatureParams).toString();

@@ -1,4 +1,3 @@
-// Esta funcion busca el usuario en el local Storage compara  con la informacion del input
 export function handleLogin(email, password, navigate, Alert) {
   let keys = Object.keys(localStorage);
   let userFound = false;
@@ -8,6 +7,8 @@ export function handleLogin(email, password, navigate, Alert) {
     if (inf.email === email) {
       userFound = true;
       if (inf.password === password) {
+        inf.login = true;
+        localStorage.setItem(key, JSON.stringify(inf));
         navigate("/home");
         break;
       } else {

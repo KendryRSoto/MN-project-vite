@@ -5,20 +5,10 @@ import "../Style/style-account.css";
 import withReactContent from "sweetalert2-react-content";
 
 export function Account() {
-  
   const [name, setName] = useState("");
   const [segLastName, setSegLastName] = useState("");
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
-
-  const [user, setUser]= useState({
-    name: name,
-    lastname: segLastName,
-    email: email,
-    password: pass,
-  });
-
-  
 
   useEffect(() => {
     const datosLocalStorage = JSON.parse(localStorage.getItem("user"));

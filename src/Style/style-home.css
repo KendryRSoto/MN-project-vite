@@ -155,6 +155,10 @@
   font-weight: bold !important;
   margin-bottom: 25px;
 }
+.cancel-button-sweetalert2{
+  width: 30px;
+  height: 30px;
+}
 
 @media screen and (max-width: 1000px) {
   .title-sweetalert2 {

@@ -1,26 +1,49 @@
 import Swal from "sweetalert2";
 
 export function showImageDetailsForm(image) {
+  const title = image.title ? image.title : `Title: ${image.public_id}`;
+  const description = image.description ? image.description : "add description";
+
   Swal.fire({
-    title: "Add title and description",
+    title: `Edit Image Details`,
     html: `
-        <label for="title">Title:</label>
-        <input type="text" id="title" name="title">
+        <div>
+          <h4>Title:</h4>
+          <p>${title}</p>
+        </div>
         <br>
+        <div>
+          <h4>Description:</h4>
+          <p>${description}</p>
+        </div>
         <br>
-        <label for="description">Description:</label>
-        <textarea id="description" name="description"></textarea>
+        <form id="image-details-form">
+          <label for="title">New Title:</label>
+          <input type="text" id="title" name="title">
+          <br>
+          <br>
+          <label for="description">New Description:</label>
+          <textarea id="description" name="description"></textarea>
+        </form>
       `,
     focusConfirm: false,
     preConfirm: () => {
-      // Cuando se hace clic en "OK", obtiene el título y la descripción ingresados
       const title = Swal.getPopup().querySelector("#title").value;
       const description = Swal.getPopup().querySelector("#description").value;
+
+      if (!title && !description) {
+        Swal.showValidationMessage("Please enter a title or a description.");
+        return false;
+      }
+
       return { title, description };
     },
   }).then((result) => {
     if (result.isConfirmed) {
-      // Actualiza los datos de la imagen en el almacenamiento local
+      if (!result.value.title && !result.value.description) {
+        return;
+      }
+
       const datosLocalStorage = JSON.parse(localStorage.getItem("user")) || {};
       const user = datosLocalStorage.user || {};
       const images = user.images || [];

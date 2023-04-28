@@ -9,7 +9,12 @@ export const useAuth = () => {
     const datosLocalStorage = localStorage.getItem("user");
 
     if (datosLocalStorage !== null) {
-      navegar("/home");
+      const usuario = JSON.parse(datosLocalStorage);
+      if (usuario.hasOwnProperty("login") && usuario.login === true) {
+        navegar("/home");
+      } else {
+        navegar("/");
+      }
     } else {
       navegar("/");
     }

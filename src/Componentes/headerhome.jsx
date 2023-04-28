@@ -3,6 +3,7 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import { handleLogUp } from "../util/deleteUser";
 import { useNavigate } from "react-router-dom";
 import { BiUserCircle } from "react-icons/bi";
+import { logoutUser } from "../util/logout";
 
 export function Headerhome() {
   let navegar = useNavigate();
@@ -34,7 +35,7 @@ export function Headerhome() {
         </NavDropdown.Item>
         <NavDropdown.Item
           onClick={() => {
-            navegar("/");
+            logoutUser(navegar);
           }}
         >
           Exit

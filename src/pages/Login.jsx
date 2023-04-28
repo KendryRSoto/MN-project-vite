@@ -10,8 +10,6 @@ export function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
- 
-
   const handleChangeLogin = ({ target: { name, value } }) => {
     switch (name) {
       case "email":

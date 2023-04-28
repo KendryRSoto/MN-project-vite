@@ -12,6 +12,7 @@ export function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+
   const navegar = useNavigate();
 
   const handleChange = ({ target: { name, value } }) => {
@@ -39,6 +40,7 @@ export function Register() {
       lastname: lastName,
       email: email,
       password: password,
+      login: false
     };
 
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
