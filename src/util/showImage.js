@@ -1,8 +1,18 @@
 import Swal from "sweetalert2";
 
 export const handleShowImageDetails = (image) => {
-  const title = image.title ? image.title : `Title: ${image.public_id}`;
-  const description = image.description ? image.description : "add description";
+
+  const datosLocalStorage = JSON.parse(localStorage.getItem("user")) || {};
+  const user = datosLocalStorage.user || {};
+  const images = user.images || [];
+  const selectedImage = images.find((img) => img.public_id === image.public_id);
+ 
+  const tit = selectedImage.title
+  const desc = selectedImage.description
+  
+
+  const title = tit ? tit : `Add Title`;
+  const description = desc ? desc : "add description";
   Swal.fire({
     html:
       '<div class="cc-sweetalert2">' +
@@ -21,13 +31,13 @@ export const handleShowImageDetails = (image) => {
       "</div>" +
       "</div>",
     showConfirmButton: false,
-    showCloseButton: true, 
+    showCloseButton: true,
     customClass: {
       container: "cc-sweetalert2",
       popup: "pop-sweetalert2",
       image: "image-sweetalert2",
       title: "title-sweetalert2",
-      cancelButton: 'cancel-button-sweetalert2',
+      cancelButton: "cancel-button-sweetalert2",
       content: "content-sweetalert2",
       "text-sweetalert2": "text-sweetalert2",
     },

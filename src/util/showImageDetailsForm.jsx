@@ -1,8 +1,8 @@
 import Swal from "sweetalert2";
 
 export function showImageDetailsForm(image) {
-  const title = image.title ? image.title : `Title: ${image.public_id}`;
-  const description = image.description ? image.description : "add description";
+  const title = image.title ? image.title : `Add Title`;
+  const description = image.description ? image.description : "Add description";
 
   Swal.fire({
     title: `Edit Image`,
@@ -59,7 +59,7 @@ export function showImageDetailsForm(image) {
       user.images = updatedImages;
       datosLocalStorage.user = user;
       localStorage.setItem("user", JSON.stringify(datosLocalStorage));
-      location.reload();
+     
     }
   });
 }
