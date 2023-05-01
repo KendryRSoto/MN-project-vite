@@ -8,5 +8,11 @@ ReactJS
 
 ### Acerca de 
 
-Es una plataforma web que te permite subir fotos y almacenarlas en la nube, el cual a cada imagen le puedes agregar un titulo y descripcion 
-tambien teniendo el control de tu cuenta, pudiendo cambiar cada informacion ingresada
+Es una plataforma web que te permite subir fotos y almacenarlas en la nube.
+
+utilizando la herramienta de widget puedes subir imagenes desde cualquier parte como:
+facebook, instagram, atraves de un link, dropbox o el almacenamiento local que tengas.
+
+Tambien puedes agregarle un titulo y una descripcion a cada imagen que subas a la web
+
+y cambiar cada informacion que ingresaste a la cuenta.
