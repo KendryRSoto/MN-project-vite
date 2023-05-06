@@ -138,14 +138,6 @@ body {
   border-radius: 10px !important;
 }
 
-@media screen and (max-width: 1000px) {
-  .image-sweetalert2 {
-    width: 60% !important;
-    height: 50% !important;
-    margin-right: 5px !important;
-    border-radius: 10px !important;
-  }
-}
 .content-sweetalert2 {
   min-width: 50%;
   min-height: 500px;
@@ -164,7 +156,11 @@ body {
 .cancel-button-sweetalert2 {
   width: 20px;
   height: 20px;
-  
+}
+.text-sweetalert2 {
+  font-size: 25px !important;
+  color: #fff !important;
+  margin-top: 10px !important;
 }
 
 @media screen and (max-width: 1000px) {
@@ -175,19 +171,16 @@ body {
     font-weight: bold !important;
     margin-bottom: 10px !important;
   }
-}
-
-.text-sweetalert2 {
-  font-size: 25px !important;
-  color: #fff !important;
-  margin-top: 10px !important;
-}
-
-@media screen and (max-width: 1000px) {
   .text-sweetalert2 {
     font-size: 15px !important;
     color: #fff !important;
     margin-top: 10px !important;
+  }
+  .image-sweetalert2 {
+    width: 60% !important;
+    height: 50% !important;
+    margin-right: 5px !important;
+    border-radius: 10px !important;
   }
 }
 
@@ -218,5 +211,43 @@ body {
 
   .text-sweetalert2 {
     font-size: 20px !important;
+  }
+
+  .conteiner-p {
+    margin-top: 20px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+  }
+
+  .image-preview {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 5px;
+    border: 2px solid #fff;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .edit-icon {
+    width: 20px;
+    position: absolute;
+    top: 5px;
+    right: 38px;
+    font-size: 1.5rem;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .delete-icon {
+    width: 20px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 1.5rem;
+    color: #fff;
+    cursor: pointer;
   }
 }
