@@ -34,6 +34,9 @@ export function Register() {
   };
 
   const handleRegister = () => {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    let vali = re.test(String(email).toLowerCase());
+
     let user = {
       name: name,
       lastname: lastName,
@@ -41,9 +44,6 @@ export function Register() {
       password: password,
       login: false,
     };
-
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    let vali = re.test(String(email).toLowerCase());
 
     if (name.length && lastName.length > 0 && vali === true) {
       if (password.length > 6) {

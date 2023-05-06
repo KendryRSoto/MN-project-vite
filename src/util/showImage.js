@@ -41,6 +41,6 @@ export const handleShowImageDetails = (image) => {
       content: "content-sweetalert2",
       "text-sweetalert2": "text-sweetalert2",
     },
-    width: "80%",
+  
   });
 };

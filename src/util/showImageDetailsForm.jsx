@@ -59,7 +59,6 @@ export function showImageDetailsForm(image) {
       user.images = updatedImages;
       datosLocalStorage.user = user;
       localStorage.setItem("user", JSON.stringify(datosLocalStorage));
-     
     }
   });
 }
